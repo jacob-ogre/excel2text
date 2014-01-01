@@ -50,10 +50,10 @@ def process_file(suffix, delim, outbase):
         cur_sheet = fil.sheet_by_name(sheet)
         new_fil = outbase + sheet + suffix
         with open(new_fil, 'wb') as out:
-            for j in range(cur_sheet.nrows):
+            for rown in range(cur_sheet.nrows):
                 to_write = []
-                for k in range(len(cur_sheet.row(j))):
-                    to_write.append(cur_sheet.cell_value(j,k))
+                for cel in range(len(cur_sheet.row(rown))):
+                    to_write.append(cur_sheet.cell_value(rown,cel))
                 to_write = [str(x) for x in to_write]
                 out.write(delim.join(to_write) + "\n")
 
