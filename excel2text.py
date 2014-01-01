@@ -58,7 +58,7 @@ def process_file(suffix, delim, outbase):
                 out.write(delim.join(to_write) + "\n")
 
 def get_suffix_delim():
-    """Return outfile suffix give delimiter from argv."""
+    """Return delimiter and file suffix given argv."""
     if delimiter == "tab":
         return "\t", ".tab"
     elif delimiter == "comma":
